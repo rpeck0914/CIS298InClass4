@@ -174,6 +174,13 @@ public class CrimeFragment extends Fragment {
         return v;
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+
+        CrimeLab.get(getActivity()).updateCrime(mCrime);
+    }
+
     //This method will be called when the result of an activity returns
     //back to this hosted activty. Note that this method is part of the
     //fragment. Fragments have thier own 'copy' of onActivityResult that
